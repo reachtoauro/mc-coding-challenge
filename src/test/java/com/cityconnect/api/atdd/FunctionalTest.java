@@ -17,6 +17,12 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
+/**
+ * This is a quick funcationlity test just couple of ATDD
+ * cases which we can move to feature file later
+ * @author aurobindamondal
+ *
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= WebEnvironment.RANDOM_PORT)
 public class FunctionalTest {
@@ -68,6 +74,10 @@ public class FunctionalTest {
         assertEquals("no", response);
 	}
 
+	/**
+	 * this is a negative test case where we will test with unknown cities
+	 * @throws URISyntaxException
+	 */
 	@Test
 	public void testInvalidCities() throws URISyntaxException 
 	{

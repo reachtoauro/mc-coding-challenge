@@ -47,8 +47,8 @@ public class ConnectedCityResource {
 
 	/**
 	 * RESTful API to show if they the origin city and the destination city are
-	 * connected. If either origin or destination is null or empty, simply return
-	 * no.
+	 * connected. 
+	 * If either origin or destination is null or empty, simply return no.
 	 * 
 	 * @param origin      city
 	 * @param destination city

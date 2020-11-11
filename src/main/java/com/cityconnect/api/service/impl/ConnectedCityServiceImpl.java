@@ -20,8 +20,8 @@ public class ConnectedCityServiceImpl implements ConnectedCityService {
 
 	/**
 	 * this will evaluate whether two cities are connected
-	 *@param origin
-	 *@param destination
+	 *@param origin			city
+	 *@param destination	city
 	 *@return boolean
 	 */
 	@Override

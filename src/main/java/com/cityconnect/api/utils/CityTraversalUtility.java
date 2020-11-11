@@ -36,22 +36,19 @@ public class CityTraversalUtility {
 	private ResourceLoader resourceLoader;
 	
 	/**
-	 * Use constructor injection for loading resource data.
-	 * 
-	 * @param resourceLoader to retrieve external resources
+	 * @param resourceLoader to retrieve resources
 	 * @param cityGuide data structure to maintain the city guide
 	 */
 	public CityTraversalUtility(ResourceLoader resourceLoader, CityGuide cityGuide){
 		this.cityGuide = cityGuide;
 		this.resourceLoader = resourceLoader;
 		loadData("classpath:city.txt");
-
 	}
 
 	/**
 	 * This method evaluates if two cities are connected based on given origin and destination
-	 * @param origin
-	 * @param destination
+	 * @param origin		city
+	 * @param destination	city
 	 * @return boolean
 	 */
 	public boolean isConnected(String origin, String destination) {
@@ -73,7 +70,8 @@ public class CityTraversalUtility {
         while (!queue.isEmpty()) {
         	// pop the current city from queue
             String currentCity = queue.poll();
-            // check if we reached the destination?
+            
+            // check if we reached the destination already
             if (currentCity.equals(destination)) {
 				return true;
 			}
@@ -93,6 +91,7 @@ public class CityTraversalUtility {
 	
 	/**
 	 * Retrieve resource data from the classpath and load the city guide datastructure
+	 * @param cityConnectionsFilePath	file path to load the data
 	 */
 	private void loadData(String cityConnectionsFilePath) {
 		Resource resource = resourceLoader.getResource(cityConnectionsFilePath);

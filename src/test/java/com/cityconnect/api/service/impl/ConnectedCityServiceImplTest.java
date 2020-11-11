@@ -14,6 +14,10 @@ import org.springframework.test.util.ReflectionTestUtils;
 
 import com.cityconnect.api.utils.CityTraversalUtility;
 
+/**
+ * @author aurobindamondal
+ * to test ConnectedCityServiceImpl class
+ */
 @SpringBootTest(classes = ConnectedCityServiceImpl.class)
 public class ConnectedCityServiceImplTest {
 
@@ -29,16 +33,23 @@ public class ConnectedCityServiceImplTest {
 		ReflectionTestUtils.setField(subject, "cityTraversalUtility", cityTraversalUtility);
 	}
 	
+	/**
+	 * test service is working properly 
+	 * with positive and negative test cases
+	 */
 	@Test
-	public void testLoadAndRetrieveGraphData() throws Exception {
+	public void testLoadAndRetrieveGraphData() {
 		when(cityTraversalUtility.isConnected(Mockito.anyString(), Mockito.anyString())).thenReturn(false);
 		assertFalse(subject.isConnected("origin", "destination"));
 		when(cityTraversalUtility.isConnected(Mockito.anyString(), Mockito.anyString())).thenReturn(true);
 		assertTrue(subject.isConnected("origin", "destination"));
 	}
 
+	/**
+	 * test to check exceptions are handled properly
+	 */
 	@Test(expected = RuntimeException.class)
-	public void testLoadAndRetrieveGraphDataException() throws Exception {
+	public void testLoadAndRetrieveGraphDataException() {
 		when(cityTraversalUtility.isConnected(Mockito.anyString(), Mockito.anyString())).thenThrow(RuntimeException.class);
 		subject.isConnected("origin", "destination");
 	}

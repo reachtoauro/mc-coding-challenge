@@ -6,14 +6,19 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.DefaultResourceLoader;
 
 import com.cityconnect.api.model.CityGuide;
 
+/**
+ * @author aurobindamondal
+ * to test CityTraversalUtility class
+ */
+@SpringBootTest(classes = CityTraversalUtility.class)
 public class CityTraversalUtilityTest {
 
 	private CityGuide cityGuide;
-	
 	@InjectMocks
 	private CityTraversalUtility subject;
 	
@@ -27,6 +32,9 @@ public class CityTraversalUtilityTest {
 		subject = new CityTraversalUtility(new DefaultResourceLoader(), cityGuide);
 	}
 	
+	/**
+	 * to test with connected cities
+	 */
 	@Test
 	public void testConnectivity() {
 		String originCity = "Boston";
@@ -34,6 +42,9 @@ public class CityTraversalUtilityTest {
 		assertTrue(subject.isConnected(originCity, destinationCity));
 	}
 	
+	/**
+	 * to test with not connected cities
+	 */
 	@Test
 	public void testNotConnected() {
 		String originCity = "Philadelphia";
@@ -41,8 +52,11 @@ public class CityTraversalUtilityTest {
 		assertFalse(subject.isConnected(originCity, destinationCity));
 	}
 	
+	/**
+	 * to test if exception is handled properly
+	 */
 	@Test(expected = NullPointerException.class)
-	public void testConnectivityNull() throws Exception {
+	public void testConnectivityNull() {
 		new CityTraversalUtility(null, null);
 	}
 

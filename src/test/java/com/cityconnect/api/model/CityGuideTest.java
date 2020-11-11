@@ -1,15 +1,25 @@
 package com.cityconnect.api.model;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
+/**
+ * @author aurobindamondal
+ * this will test CityGuide class
+ */
+@SpringBootTest(classes = CityGuide.class)
 public class CityGuideTest {
 
 	private CityGuide cityGuide;
 	
+	/**
+	 * this will test all the methods of the subject class
+	 */
 	@Test
-	public void test() {
+	public void testCityGuide() {
 		cityGuide = new CityGuide();
 		cityGuide.addConnection("Boston", "New York");
 		cityGuide.addConnection("Philadelphia", "Newark");

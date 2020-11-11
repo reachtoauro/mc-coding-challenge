@@ -6,10 +6,13 @@ This document outlines the details as well as best practices in developing sprin
 
 > 1. *Swagger API*
 > 2. *JUnit* Test Cases
-> 3. *100%* code coverage through Eclemma
+> 3. *100%* unit test coverage through Eclemma
 > 4. *0 Sonar* Bugs, Vulnerabilities and Code smells
 > 5. *Functional Test cases*
 > 6. *Monitoring* metrics (API statistics)
+> 7. Logging using logback
+> 8. Exception hanling as per RESTful API
+> 9. well documented, clean code
 
 ## SonarCloud Badges
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=reachtoauro_mc-coding-challenge&metric=bugs)](https://sonarcloud.io/dashboard?id=reachtoauro_mc-coding-challenge)
@@ -25,8 +28,8 @@ Minimun requirements to run this project
  
 ## Design Solution
 
-> The solution is implemnted using Graph data structure where each vertex represents a city, and each edge represents a connection between two cities.
-> The graph is unidirected as per one of the given examples where origin was Boston and destination Philadelphia
+> The solution is implemented using Graph data structure where each vertex represents a city, and each edge represents a connection between two cities.
+> The graph is undirected as per one of the given examples where origin was Boston and destination Philadelphia
 > Loading the given connected cities from the given file to crate a Graph using Adjacency Map
 > Breadth First Traversal mechanism to identify if a path exists between two cities inside a Utility
 

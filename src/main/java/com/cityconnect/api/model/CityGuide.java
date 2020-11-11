@@ -14,6 +14,8 @@ import org.springframework.stereotype.Component;
  * which will help determine whether the cities in question are 
  * connected or not
  *
+ * where each vertex represents a city, and each edge represents a 
+ * connection between two cities
  */
 @Component
 public class CityGuide {
