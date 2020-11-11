@@ -1,7 +1,6 @@
 package com.cityconnect.api.atdd;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -20,7 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= WebEnvironment.RANDOM_PORT)
-public class ATDD {
+public class FunctionalTest {
 
 	@LocalServerPort
 	int randomServerPort;
@@ -28,6 +27,10 @@ public class ATDD {
 	@Autowired
 	private TestRestTemplate restTemplate;
 	
+	/**
+	 * this is to test 400 BAD Request
+	 * @throws URISyntaxException
+	 */
 	@Test
 	public void testBadRequest() throws URISyntaxException 
 	{
@@ -38,6 +41,10 @@ public class ATDD {
 	}
 	
 	
+	/**
+	 * this is to test a positive case where we will test with connected cities
+	 * @throws URISyntaxException
+	 */
 	@Test
 	public void testConnectedCities() throws URISyntaxException 
 	{
@@ -45,8 +52,12 @@ public class ATDD {
 		queryParams.put("origin", "Boston");
 		queryParams.put("destination", "Newark");
         String response = restTemplate.getForObject("/connected?origin={origin}&destination={destination}", String.class, queryParams);
-        assertTrue(response.equals("yes")); 
+        assertEquals("yes", response); 
 	}
+	/**
+	 * this is a negative test case where we will test with to disconnected
+	 * @throws URISyntaxException
+	 */
 	@Test
 	public void testUnConnectedCities() throws URISyntaxException 
 	{
@@ -54,7 +65,7 @@ public class ATDD {
 		queryParams.put("origin", "Boston");
 		queryParams.put("destination", "Albany");
         String response = restTemplate.getForObject("/connected?origin={origin}&destination={destination}", String.class, queryParams);
-        assertTrue(response.equals("no")); 
+        assertEquals("no", response);
 	}
 
 	@Test
@@ -64,6 +75,6 @@ public class ATDD {
 		queryParams.put("origin", "AA");
 		queryParams.put("destination", "BB");
         String response = restTemplate.getForObject("/connected?origin={origin}&destination={destination}", String.class, queryParams);
-        assertTrue(response.equals("no")); 
+        assertEquals("no", response); 
 	}
 }

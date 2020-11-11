@@ -1,7 +1,6 @@
 package com.cityconnect.api.resource;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
@@ -45,7 +44,7 @@ public class ConnectedCityResourceTest {
 	@Test(expected = ResponseStatusException.class)
 	public void testCheckIfConnectedException() throws Exception {
 		when(service.isConnected(Mockito.anyString(), Mockito.anyString())).thenThrow(ResponseStatusException.class);
-		assertEquals("no", subject.checkIfConnected("Boston", "Albany"));
+		subject.checkIfConnected("Boston", "Albany");
 		fail("Exception was expected");
 	}
 	

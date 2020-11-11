@@ -14,6 +14,6 @@ public interface ConnectedCityService {
 	 * @return boolean
 	 * @throws Exception
 	 */
-	boolean isConnected(String origin, String destination) throws Exception;
+	boolean isConnected(String origin, String destination);
 
 }

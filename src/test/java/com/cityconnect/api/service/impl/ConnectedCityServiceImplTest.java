@@ -1,11 +1,8 @@
 package com.cityconnect.api.service.impl;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
-
-import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -35,17 +32,15 @@ public class ConnectedCityServiceImplTest {
 	@Test
 	public void testLoadAndRetrieveGraphData() throws Exception {
 		when(cityTraversalUtility.isConnected(Mockito.anyString(), Mockito.anyString())).thenReturn(false);
-		assertNotNull(subject.isConnected("origin", "destination"));
 		assertFalse(subject.isConnected("origin", "destination"));
 		when(cityTraversalUtility.isConnected(Mockito.anyString(), Mockito.anyString())).thenReturn(true);
-		assertNotNull(subject.isConnected("origin", "destination"));
 		assertTrue(subject.isConnected("origin", "destination"));
 	}
 
 	@Test(expected = RuntimeException.class)
 	public void testLoadAndRetrieveGraphDataException() throws Exception {
 		when(cityTraversalUtility.isConnected(Mockito.anyString(), Mockito.anyString())).thenThrow(RuntimeException.class);
-		assertNotNull(subject.isConnected("origin", "destination"));
+		subject.isConnected("origin", "destination");
 	}
 
 }

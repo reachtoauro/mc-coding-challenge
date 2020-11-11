@@ -2,14 +2,11 @@ package com.cityconnect.api.utils;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
-import org.mockito.Mockito;
 import org.springframework.core.io.DefaultResourceLoader;
-import org.springframework.test.util.ReflectionTestUtils;
 
 import com.cityconnect.api.model.CityGuide;
 

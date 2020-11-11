@@ -41,7 +41,7 @@ public class CityTraversalUtility {
 	 * @param resourceLoader to retrieve external resources
 	 * @param cityGuide data structure to maintain the city guide
 	 */
-	public CityTraversalUtility(ResourceLoader resourceLoader, CityGuide cityGuide) throws Exception{
+	public CityTraversalUtility(ResourceLoader resourceLoader, CityGuide cityGuide){
 		this.cityGuide = cityGuide;
 		this.resourceLoader = resourceLoader;
 		loadData("classpath:city.txt");
@@ -111,7 +111,7 @@ public class CityTraversalUtility {
 				}
 			}
 			reader.close();
-			LOGGER.debug("City guide loaded successfully! {}",cityGuide.printCityGuide());
+			LOGGER.debug("City guide loaded successfully!");
 		} catch (Exception ex) {
 			LOGGER.error("Error occured while loading file or populating city guide", ex);
 		}
