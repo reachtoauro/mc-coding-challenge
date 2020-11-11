@@ -20,6 +20,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<swagger.version>2.9.2</swagger.version>
+		<sonar.projectKey>reachtoauro_mc-coding-challenge</sonar.projectKey>
+  		<sonar.organization>reachtoauro</sonar.organization>
+  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<dependencies>
