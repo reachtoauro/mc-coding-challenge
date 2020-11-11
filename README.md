@@ -3,12 +3,13 @@
 
 ## Introduction
 This document outlines the details as well as best practices in developing spring boot based REST API application which determines if two cities are connected based on origin and destination user inputs. This project also includes 
- > *Swagger API*
- > *JUnit* Test Cases
- > *100%* code coverage through Eclemma
- > *0 Sonar* Bugs, Vulnerabilities and Code smells
- > *Functional Test cases*
- > *Monitoring* metrics (API statistics)
+
+> 1. *Swagger API*
+> 2. *JUnit* Test Cases
+> 3. *100%* code coverage through Eclemma
+> 4. *0 Sonar* Bugs, Vulnerabilities and Code smells
+> 5. *Functional Test cases*
+> 6. *Monitoring* metrics (API statistics)
 
 ## SonarCloud Badges
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=reachtoauro_mc-coding-challenge&metric=bugs)](https://sonarcloud.io/dashboard?id=reachtoauro_mc-coding-challenge)
