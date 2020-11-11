@@ -28,13 +28,15 @@ This application is a *maven* project with implementations for below.
 
 > 1. Spring Boot & Spring REST API
 > 2. Swagger Specification
-> 3. Unit test cases & ATDD
-> 4. Actuator for health, info and monitoring metrics 
+> 3. Unit test cases
+> 4. Functional Test Cases
+> 5. Actuator for health, info and monitoring metrics 
+> 6. logback logging
 
 ## Coding
 > The project is created using the Spring Initializer at https://start.spring.io, specifying a Maven Project using Java 8, Spring Boot version 2.3.5, and packaged as a JAR in Spring Tool Suite(STS)
 > Created a resource(controller) annotated with @RestController for Spring MVC.
-> For Logging I used logback(spring variation) and SL4J(used as façade for commonly used logging frameworks in our case logback)
+> For Logging I used logback(spring variation) and SLF4J(used as façade for commonly used logging frameworks in our case logback)
 > As per best practice, I placed the city.txt resource data file into the java resources folder, where we can read it using the ResourceLoaderAware implementation.
 
 ## Installation & Run
@@ -113,3 +115,4 @@ http://localhost:8081/actuator/
 > Authentication layer can be implemented using Spring Security or JWT
 > Performance Monitoring can be implemented using New Relic
 > The application can be easily dockerized and deployed in Elastic Beanstalk, ECS or leveraging EKS in AWS
+> Customized Error handling
