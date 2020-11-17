@@ -21,8 +21,12 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<swagger.version>2.9.2</swagger.version>
 		<sonar.projectKey>reachtoauro_mc-coding-challenge</sonar.projectKey>
+		<sonar.projectName>city-connect</sonar.projectName>
+		<sonar.projectVersion>0.0.1-SNAPSHOT</sonar.projectVersion>
+		
 		<sonar.organization>reachtoauro</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.junit.reportsPath>target/surefire-reports/TEST-*.xml</sonar.junit.reportsPath>
 		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 	</properties>
 
