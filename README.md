@@ -52,6 +52,9 @@ This application is a *maven* project with implementations for below.
 > 3. For Logging I used logback(spring variation) and SLF4J(used as façade for commonly used logging frameworks in our case logback)
 > 4. As per best practice, I placed the city.txt resource data file into the java resources folder, where we can read it using the ResourceLoaderAware implementation.
 
+## Code coverage produced by eclemma plugin
+![Image of Coverage](coverage.png)
+
 ## Installation & Run
   
  > To install and run goto the directory in which you want to install the project.
